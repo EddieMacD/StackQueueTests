@@ -56,7 +56,7 @@ namespace StackQueueTests
 
         public void Print()
         {
-            for (int i = Top; i >= 0; i--)
+            for (int i = 0; i <= Top; i++)
             {
                 Console.Write(Contents[i] + "     ");
             }
