@@ -10,7 +10,7 @@ namespace StackQueueTests
     {
         static void Main(string[] args)
         {
-            CircularQueueTest();
+            PriorityQueueTest();
         }
 
         static void StackTest()
@@ -65,6 +65,42 @@ namespace StackQueueTests
             queue.Print();
 
             queue.Enqueue(357);
+            Console.WriteLine(queue.IsEmpty());
+            Console.WriteLine(queue.IsFull());
+
+
+            Console.ReadLine();
+        }
+
+        static void PriorityQueueTest()
+        {
+            PriorityQueue queue = new PriorityQueue(5);
+
+            queue.Enqueue(5, 2);
+            queue.Print();
+
+            queue.Enqueue(9, 1);
+            queue.Enqueue(6, 3);
+            queue.Print();
+
+            queue.Dequeue();
+            queue.Print();
+
+            Console.WriteLine(queue.IsEmpty());
+            Console.WriteLine(queue.IsFull());
+
+            queue.Dequeue();
+            queue.Dequeue();
+            Console.WriteLine(queue.IsEmpty());
+            Console.WriteLine(queue.IsFull());
+
+            queue.Enqueue(123, 5);
+            queue.Enqueue(456, 4);
+            queue.Enqueue(789, 3);
+            queue.Enqueue(159, 2);
+            queue.Print();
+
+            queue.Enqueue(357, 1);
             Console.WriteLine(queue.IsEmpty());
             Console.WriteLine(queue.IsFull());
 
